@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Imaginary Berlin</title>
+        <style>
+            body{padding:50px;color:white;background-color:black}
+        </style>
+        <script type="text/javascript"
+            src="libraries/jquery-3.3.1.min.js">
+        </script>
+        <script src="flocking-all.min.js"></script>
+
+        <script>
+        $(function(){
+
+          var synth = flock.synth({
+              synthDef: {
+                  ugen: "flock.ugen.playBuffer",
+                  buffer: {
+                      id: "chord",
+                      url: "snd/69248__reinsamba__colours-german-male.mp3"
+                  },
+
+                  trigger: {
+                      ugen: "flock.ugen.mouse.click"
+                  }
+              }
+          });
+
+
+        });
+        </script>
+
+    </head>
+<body class="colourme">
+<h1 id="display">testing</h1>
+</body>

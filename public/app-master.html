@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="libraries/jquery-3.3.1.min.js"></script>
+        <title>Imaginary Berlin @ WAC 2018 - Berlin</title>
+        <script src="convnet.js"></script>
+        <script src="dsp.js"></script>
+        <script src="flocking-all.min.js"></script>
+        <!-- <script src="iberlin-1.js"></script> -->
+        <script src="/socket.io.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Fauna One' rel='stylesheet'>
+        <!-- <link href='css/layout.css' rel='stylesheet'> -->
+        <style>body {font-family: 'Fauna One';padding:50px;color:white;background-color:black}</style>
+
+        <script>
+          var socket = io();
+          var part = 0;
+          socket.on('change', function(data){console.log('change'); $("#display").text(data)});
+        </script>
+        <script>
+        setInterval(function(){
+         socket.emit('change', part);
+         part++;
+      }, 1000);
+        </script>
+
+    </head>
+<body class="colourme">
+<h1 id="display">loading</h1>
+
+
+</body>
